@@ -1,0 +1,119 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.page-top {
+    background-color: red;
+    height: 30px;
+}
+
+.page-top .page-content h2 {
+    color: #fff;
+    margin-left: 15%;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.big-title {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0 5px 15%;
+}
+
+.main .task-input {
+    margin-left: 15%;
+    height: 25px;
+    width: 35%;
+    border: 1px solid #ccc;
+}
+
+.main .task-count {
+    margin-left: 15%;
+    width: 35%;
+    height: 25px;
+}
+
+.main .task-count li {
+    float: left;
+    color: red;
+    opacity: 0.7;
+    padding: 5px 0 5px 5px;
+    font-size: 15px;
+}
+
+.main .task-count .action {
+    float: right;
+    padding: 5px 0px 5px 0;
+    color: #ccc;
+    opacity: 0.7;
+    font-size: 15px;
+}
+
+.main .task-count .action a {
+    margin-left: 20px;
+}
+
+.main .tasks .no-task-tip {
+    display: inline-block;
+    width: 35%;
+    height: 30px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    line-height: 30px;
+    padding-left: 5px;
+    margin-left: 15%;
+}
+
+.view {
+    margin-left: 15%;
+    width: 35%;
+    padding-left: 5px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #ccc;
+}
+
+.main .tasks .todo-list .view .toggle {
+    margin: 0 10px 0 5px;
+}
+
+.edit {
+    display: none;
+    margin-left: 15%;
+    width: 35%;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 5px;
+}
+
+.main .tasks .todo-list .view .destroy {
+    float: right;
+    color: red;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    margin: 7px 7px 7px 0;
+    opacity: 0.7;
+}
+
+.main .tasks .todo-list .view .destroy:hover {
+    opacity: 1;
+}
+
+.completed {
+    opacity: 0.3;
+}
+
+.hide {
+    display: block;
+}

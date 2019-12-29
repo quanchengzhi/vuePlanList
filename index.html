@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function vElement(target, prop, children) {
+            if (!(this instanceof vElement)) {
+                return new vElement(target, prop, children);
+            }
+            if (Object.prototype.toString.call(prop) === "[object Array]") {
+                children = prop;
+                prop = {};
+            }
+            this.target = target;
+            this.prop = prop;
+            this.children = children;
+            var count = 0;
+            this.children.forEach(element => {
+                if (element instanceof vElement) {
+                    count += element.count;
+                }
+                count++;
+            });
+            this.count = count;
+        }
+        vElement.prototype.render = function() {
+            var el = document.createElement(this.target);
+            var children = this.children;
+            var prop = this.prop;
+            for (let item in prop) {
+                var curProp = prop[item];
+                el.setAttribute(item, curProp);
+            }
+            children.forEach(function(child, index) {
+                if (child instanceof vElement) {
+                    var childDom = child.render();
+                } else {
+                    var childDom = document.createTextNode(child);
+                }
+                el.appendChild(childDom);
+            });
+            return el;
+        }
+        var dom = vElement("div", {
+            class: "demo",
+            id: "demo1"
+        }, ["hello world", vElement("p", {
+            class: "demo2"
+        }, ["i am ptag"])]);
+        console.log(dom.render());
+    </script>
+</body>
+
+</html>
